@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+    <script src="https://kit.fontawesome.com/1a8c6dd550.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajuste para espaçamento na navegação */
+        .navigation a {
+            margin-left: 40px; /* Espaçamento entre os links */
+        }
+
+        /* Ajuste do tamanho das caixas de entrada */
+        .input-field {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px; /* Largura máxima das caixas */
+            margin: 0 auto; /* Centralizar */
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 0 15px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #e8622f; /* Cor da borda */
+        }
+
+        body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(daysGimg2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+        /* Correção de cor e placeholders */
+        input[type="date"], input[type="email"] {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        input[type="date"]::placeholder, input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo"><img src="ValorYoshiLogo.png" alt="Logo"></h2>
+        <div class="navigation">
+            <a href="index.html">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Cadastro</a> <!-- Ajuste no espaçamento -->
+        </div>
+    </header>
+
+    <div class="form">
+        <h2>Cadastro</h2>
+        <form action="">
+            <div class="input-field">
+                <input type="text" placeholder="Nome completo" name="nome" required />
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="input-field">
+                <input type="date" name="data_nascimento" placeholder="Data de nascimento" required />
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="CPF" name="cpf" required />
+                <i class="fa-regular fa-id-card"></i>
+            </div>
+            <div class="input-field">
+                <input type="email" placeholder="Email" name="email" required />
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Senha" id="passwordInput" required />
+                <i class="uil uil-lock icon"></i>
+                <i class="fa-regular fa-eye-slash showHidePassword" id="togglePassword"></i>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Nick" name="nick" required />
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="input-field button">
+                <button type="submit">Cadastrar</button>
+            </div>
+            <div class="login-signup">
+                <p>Já tem conta? <a href="index.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('passwordInput');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

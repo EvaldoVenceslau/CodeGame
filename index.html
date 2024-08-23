@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+    <script src="https://kit.fontawesome.com/1a8c6dd550.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo"><img src="ValorYoshiLogo.png" alt="Logo"></h2>
+        <div class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+        </div>
+    </header>
+
+    <div class="form">
+        <h2>Login</h2>
+        <form action="">
+            <div class="input-field">
+                <input type="text" placeholder="Digite seu email" name="correo" required />
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Digite sua senha" id="passwordInput" required/>
+                <i class="uil uil-lock icon"></i>
+                <i class="fa-regular fa-eye-slash showHidePassword" id="togglePassword"></i>
+            </div>
+            <div class="checkbox-text"> 
+                <div class="checkbox-content">
+                    <input type="checkbox" id="logCheck"/>
+                    <label for="logCheck">Lembrar de mim</label>
+                </div>
+                <a href="#" class="form-link">Esqueceu a senha?</a>
+            </div>
+            <div class="input-field button">
+                <button type="submit">Logar</button>
+            </div>
+            <div class="login-signup">
+                <p>Ainda não tem conta? <a href="cadastro.html">Cadastrar</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('passwordInput');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute using getAttribute() method
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Toggle the eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
